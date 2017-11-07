@@ -1,21 +1,36 @@
 Pythontemplate
----------------
+===============
 
 A project to be used as a template for python projects.
 
-Keep install_requires in setup.py updated with required packages.
-Do not touch requirements.txt.
+Usage
+======
 
-The script can be invoked by:
-- cd into the directory /pythontemplate and execute
+To use the template and adapt it to a new project:
+
+  - Rename the pythontemplate folder to your project name.
+  - Keep install_requires in setup.py updated with required packages.
+  - Do not touch requirements.txt.
+  - In setup.py update: version=find_version("... so that it points to the file where __version__ is defined.
+  - In setup.py make entry_point point to the file containing the main function.
+  - In setup.py update: name, description, url.
+  - Rename and edit pythontemplate-runner.py.
+  
+Run the script
+===============
+  
+The script can be run by either cd into the directory /pythontemplate and execute:
 
   $ python -m pythontemplate
 
-or with
+or in the root folder run:
 
   $ ./pythontemplate-runner.py
 
-To install for development do:
+Install the script
+===================
+
+To install the script for development do:
 
   $ pip install -r requirements.txt
 

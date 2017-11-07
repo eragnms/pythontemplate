@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-
-# Keep install_requires updated as well as requirements.txt
-# To install for development do: pip install -r requirements
-# To install for production do: pip install pythontemplate or .
-
 import re
 import io
 import os

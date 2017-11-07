@@ -3,6 +3,9 @@ Pythontemplate
 
 A project to be used as a template for python projects.
 
+Keep install_requires in setup.py updated with required packages.
+Do not touch requirements.txt.
+
 The script can be invoked by:
 - cd into the directory /pythontemplate and execute
 
@@ -12,13 +15,13 @@ or with
 
   $ ./pythontemplate-runner.py
 
-Install the script with either (cd into the root of the project):
+To install for development do:
 
-  $ pip install -e .
+  $ pip install -r requirements.txt
 
-or
+To install for production do:
 
-  $ pip install .
+  $ pip install pythontemplate or .
 
 After installation it can be invoked with:
 

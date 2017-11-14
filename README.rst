@@ -30,14 +30,25 @@ or in the root folder run:
 Install the script
 ===================
 
-To install the script for development do:
+To install the script for development do in a virtualenv:
 
   $ pip install -r requirements.txt
 
+
 To install for production do:
 
-  $ pip install pythontemplate or .
+  $ pip install --user pythontemplate
+  or in the root folder of the project
+  $ pip install --user .
 
 After installation it can be invoked with:
 
-  $ pythontemplate
+  $ $HOME/.local/bin/pythontemplate
+
+Or, to what ever path PYTHONUSERBASE is set to. PYTHONUSERBASE can be set
+with:
+
+  $ export PYTHONUSERBASE=/myappenv
+
+See: https://pip.pypa.io/en/stable/user_guide/#user-installs
+

@@ -42,6 +42,7 @@ setup(
             ]
     },
     packages=['pythontemplate'],
-    install_requires=[],
+    install_requires=['package_1',
+                      'package_2',],
 )
 

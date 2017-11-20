@@ -52,3 +52,8 @@ with:
 
 See: https://pip.pypa.io/en/stable/user_guide/#user-installs
 
+Docker
+=======
+
+To run the script with docker...
+Look at how this is done in the cosycar project.

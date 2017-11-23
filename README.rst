@@ -34,6 +34,9 @@ To install the script for development do in a virtualenv:
 
   $ pip install -r requirements.txt
 
+or (to get the setup.py properly run):
+
+  $ pip install .
 
 To install for production do:
 

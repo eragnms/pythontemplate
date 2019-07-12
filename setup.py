@@ -33,7 +33,7 @@ setup(
     description='A template for my python projects',
     long_description=readme,
     author='Mats Gustafsson',
-    author_email='e-contact@mats-gustafsson.se',
+    author_email='matsgus71@gmail.com',
     url='https://github.com/eragnms/pythontemplate',
     license=license,
     entry_points={

@@ -15,15 +15,15 @@ To use the template and adapt it to a new project:
   - In setup.py make entry_point point to the file containing the main function.
   - In setup.py update: name, description, url.
   - Rename and edit pythontemplate-runner.py.
-  
+
 Run the script
 ===============
-  
-The script can be run by either cd into the directory /pythontemplate and execute:
+
+The script can be run from the root folder with either of:
 
   $ python -m pythontemplate
 
-or in the root folder run:
+or:
 
   $ ./pythontemplate-runner.py
 

@@ -1,11 +1,9 @@
 Pythontemplate
 ===============
-
 A project to be used as a template for python projects.
 
 Usage
 ======
-
 To use the template and adapt it to a new project:
 
   - Rename the pythontemplate folder to your project name.
@@ -34,16 +32,15 @@ Here’s a recommended workflow for when you are using a setup.py as a way to di
 - Pipfile.lock
 - Details for a reproducible environment generated from pipenv lock
 To clarify, put your minimum requirements in setup.py instead of directly with pipenv install. Then use the pipenv install '-e .' command to install your package as editable. This gets all the requirements from setup.py into your environment. Then you can use pipenv lock to get a reproducible environment.
+
 Package is not to be distributed
 ................................
 If you are developing an application that isn’t meant to be distributed or installed (a personal website, a desktop application, a game, or similar), you don’t really need a setup.py.
 
 In this situation, you could use Pipfile/Pipfile.lock combo for managing your dependencies with the flow described previously to deploy a reproducible environment in production.
 
-
 Run the script
 ===============
-
 The script can be run from the root folder with either of:
 
   $ python -m pythontemplate
@@ -54,7 +51,6 @@ or:
 
 Install the script
 ===================
-
 To install the script for development do:
 
   $ pip install -r requirements.txt

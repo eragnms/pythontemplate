@@ -37,7 +37,7 @@ Package is not to be distributed
 ................................
 If you are developing an application that isn’t meant to be distributed or installed (a personal website, a desktop application, a game, or similar), you don’t really need a setup.py.
 
-In this situation, you could use Pipfile/Pipfile.lock combo for managing your dependencies with the flow described previously to deploy a reproducible environment in production.
+In this situation, you could use Pipfile/Pipfile.lock combo for managing your dependencies.
 
 Run the script
 ===============

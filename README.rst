@@ -27,8 +27,10 @@ Here’s a recommended workflow for when you are using a setup.py as a way to di
 - Pipfile
 - Represents the concrete requirements for your package
 - Pull the minimally required dependencies from setup.py by installing your package using Pipenv:
+
   - Use pipenv install '-e .'
   - That will result in a line in your Pipfile that looks something like "e1839a8" = {path = ".", editable = true}.
+
 - Pipfile.lock
 - Details for a reproducible environment generated from pipenv lock
 To clarify, put your minimum requirements in setup.py instead of directly with pipenv install. Then use the pipenv install '-e .' command to install your package as editable. This gets all the requirements from setup.py into your environment. Then you can use pipenv lock to get a reproducible environment.

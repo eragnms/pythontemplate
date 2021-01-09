@@ -2,6 +2,17 @@ Pythontemplate
 ===============
 A project to be used as a template for python projects.
 
+Tools and conventions to use
+============================
+- Use Python 3 (on a machine running Python 2 as default do install with pip3).
+- Pipenv is used. Install with "sudo pip install pipenv".
+- Pytest is used for unit testing.
+- Pre-commit is used. Install pre-commit with "sudo pip install pre-commit" and then "pre-commit install" in the project's root folder. Pre-commit requires a file .pre-commit-config.yaml in the project root.
+- Black is used and triggered by pre-commit, or by "$ black .". Install with "sudo pip install black".
+- MyPy is used and is integrated by pre-commit. To integrate into Emacs one need to put "((python-mode . ((flycheck-checker . python-mypy))))" into the project's .dir-locals.el. MyPy also requires a __init__.py file in each directory containing modules to be imported. Install MyPy with "sudo pip install mypy".
+- Flake8 is used by using pre-commit, see `pre-commit <https://pre-commit.com/>`_, and by changing max line length to 88 in a .flake8 file in the project root.
+- Use isort, install with "sudo pip install isort". Isort is triggered by pre-commit.
+
 Usage
 ======
 To use the template and adapt it to a new project:
@@ -75,6 +86,16 @@ with:
   $ export PYTHONUSERBASE=/myappenv
 
 See: https://pip.pypa.io/en/stable/user_guide/#user-installs
+
+To build a wheel
+================
+$ sudo pip install setuptools wheel
+$ python setup.py bdist_wheel
+
+To install a wheel file
+=======================
+$ sudo pip3 install <filename>.whl
+
 
 Docker
 =======

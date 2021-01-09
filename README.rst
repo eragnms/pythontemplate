@@ -12,7 +12,7 @@ Tools and conventions to use
 - MyPy is used and is integrated by pre-commit. To integrate into Emacs one need to put "((python-mode . ((flycheck-checker . python-mypy))))" into the project's .dir-locals.el. MyPy also requires a __init__.py file in each directory containing modules to be imported. Install MyPy with "sudo pip install mypy".
 - Flake8 is used by using pre-commit, see `pre-commit <https://pre-commit.com/>`_, and by changing max line length to 88 in a .flake8 file in the project root.
 - Use isort, install with "sudo pip install isort". Isort is triggered by pre-commit.
-- Use gitlint, $ sudo pip install gitlint. Then run: $ pre-commit install --hook-type commit-msg
+- Use gitlint, $ sudo pip install gitlint. Then run: $ pre-commit install --hook-type commit-msg. Configured in .gitlint.
 
 Usage
 ======

@@ -18,3 +18,7 @@ repos:
     rev: 4.3.21
     hooks:
     -   id: isort
+-   repo: https://github.com/jorisroovers/gitlint
+    rev:  0.15.0
+    hooks:
+    -   id: gitlint

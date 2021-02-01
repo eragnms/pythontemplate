@@ -1,6 +1,6 @@
 repos:
--   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v1.2.3
+-   repo: https://gitlab.com/pycqa/flake8
+    rev: master
     hooks:
     - id: flake8
 -   repo: https://github.com/ambv/black
@@ -15,10 +15,10 @@ repos:
         entry: bash -c 'mypy "$@" || true' --
 #        args: [-p msn_cli]
 -   repo: https://github.com/timothycrosley/isort
-    rev: 4.3.21
+    rev: master
     hooks:
     -   id: isort
 -   repo: https://github.com/jorisroovers/gitlint
-    rev:  v0.15.0
+    rev:  main
     hooks:
     -   id: gitlint

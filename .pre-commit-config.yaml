@@ -1,24 +1,24 @@
 repos:
 -   repo: https://gitlab.com/pycqa/flake8
-    rev: master
+    rev: 3.8.4
     hooks:
     - id: flake8
 -   repo: https://github.com/ambv/black
-    rev: stable
+    rev: 20.8b1
     hooks:
     - id: black
 -   repo: https://github.com/pre-commit/mirrors-mypy
-    rev: master
+    rev: v0.800
     hooks:
     -   id: mypy
         verbose: false
         entry: bash -c 'mypy "$@" || true' --
 #        args: [-p msn_cli]
 -   repo: https://github.com/timothycrosley/isort
-    rev: master
+    rev: 5.7.0
     hooks:
     -   id: isort
 -   repo: https://github.com/jorisroovers/gitlint
-    rev:  main
+    rev:  v0.15.0
     hooks:
     -   id: gitlint

@@ -7,12 +7,12 @@ Tools and conventions to use
 - Use Python 3 (on a machine running Python 2 as default do install with pip3).
 - Pipenv is used. Install with "sudo pacman -S python-pipenv" and then "pipenv install"
 - Pytest is used for unit testing.
-- Pre-commit is used. Setup pre-commit with "pre-commit install" in the project's root folder and then "pre-commit autoupdate". Installed with pipenv.
-- Black is used and triggered by pre-commit, or by "$ black .". Installed with pipenv.
-- MyPy is used and is integrated by pre-commit. To integrate into Emacs one need to put "((python-mode . ((flycheck-checker . python-mypy))))" into the project's .dir-locals.el. MyPy also requires a __init__.py file in each directory containing modules to be imported. Installed with pipenv.
+- Pre-commit is used. Setup pre-commit with "pre-commit install" in the project's root folder and then "pre-commit autoupdate".
+- Black is used and triggered by pre-commit, or by "$ black ."
+- MyPy is used and is integrated by pre-commit. To integrate into Emacs one need to put "((python-mode . ((flycheck-checker . python-mypy))))" into the project's .dir-locals.el. MyPy also requires a __init__.py file in each directory containing modules to be imported.
 - Flake8 is used by using pre-commit, see `pre-commit <https://pre-commit.com/>`_, and by changing max line length to 88 in a .flake8 file in the project root.
-- Use isort, install with "sudo pip install isort". Isort is triggered by pre-commit.
-- Use gitlint, $ sudo pip install gitlint. Then run: $ pre-commit install --hook-type commit-msg. Configured in .gitlint.
+- Use isort. Isort is triggered by pre-commit, or "isort .".
+- Use gitlint. Setup with: $ pre-commit install --hook-type commit-msg. Configured in .gitlint.
 
 Usage
 ======
@@ -61,6 +61,19 @@ or:
 
   $ ./pythontemplate-runner.py
 
+Documentation
+=============
+To build the documentation:
+
+  $ cd docs
+  $ make html
+
+Tests
+=====
+To run tests:
+
+  $ pytest
+
 Install the script
 ===================
 To install the script for development do:
@@ -96,7 +109,6 @@ $ python setup.py bdist_wheel
 To install a wheel file
 =======================
 $ sudo pip3 install <filename>.whl
-
 
 Docker
 =======

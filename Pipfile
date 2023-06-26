@@ -9,6 +9,7 @@ black = "*"
 sphinx = "*"
 isort = "*"
 mypy = "*"
+gitlint = "*"
 
 [dev-packages]
 

@@ -8,6 +8,7 @@ pre-commit = "*"
 black = "*"
 sphinx = "*"
 isort = "*"
+mypy = "*"
 
 [dev-packages]
 

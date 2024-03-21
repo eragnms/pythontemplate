@@ -35,17 +35,17 @@ Package is to be distributed
 Here’s a recommended workflow for when you are using a setup.py as a way to distribute your package:
 
 - setup.py
-- install_requires keyword should include whatever the package “minimally needs to run correctly.”
+  - install_requires keyword should include whatever the package “minimally needs to run correctly.”
+  - entry_points should contain entry points to the script to run
 - Pipfile
-- Represents the concrete requirements for your package
-- Pull the minimally required dependencies from setup.py by installing your package using Pipenv:
-
+  - Represents the concrete requirements for your package
+  - Pull the minimally required dependencies from setup.py by installing your package using Pipenv:
   - Use pipenv install '-e .'
   - That will result in a line in your Pipfile that looks something like "e1839a8" = {path = ".", editable = true}.
 
 - Pipfile.lock
-- Details for a reproducible environment generated from pipenv lock
-To clarify, put your minimum requirements in setup.py instead of directly with pipenv install. Then use the pipenv install '-e .' command to install your package as editable. This gets all the requirements from setup.py into your environment. Then you can use pipenv lock to get a reproducible environment.
+  - Details for a reproducible environment generated from pipenv lock
+    To clarify, put your minimum requirements in setup.py instead of directly with pipenv install. Then use the pipenv install '-e .' command to install your package as editable. This gets all the requirements from setup.py into your environment. Then you can use pipenv lock to get a reproducible environment.
 
 Package is not to be distributed
 ................................
@@ -58,6 +58,10 @@ Run the script
 The script can be run from the root folder with either of:
 
   $ python -m pythontemplate
+
+or:
+
+  $ python -m pythontemplate.<module>
 
 or:
 
@@ -78,30 +82,24 @@ To run tests:
 
 Install the script
 ===================
-To install the script for development do:
+Use pipx to run the script in a virtual environment:
 
-  $ pip install -r requirements.txt
+   $ sudo pacman -S python-pipx
 
-or (to get the setup.py properly run):
+Then:
 
-  $ pip install .
+   $ cd pythontemplate
+   $ pipx install .
 
-To install for production do:
+To upgrade to a new version:
 
-  $ pip install --user pythontemplate
-  or in the root folder of the project
-  $ pip install --user .
+   $ cd pythontemplate
+   $ pipx upgrade pythontemplate
 
-After installation it can be invoked with:
+When installed the entry points to the scripts, i.e. the way to run
+the scripts, are defined by the entry_points in setup.py. In the
+example the script "script_2.py" would be run with "name-for-script-2".
 
-  $ $HOME/.local/bin/pythontemplate
-
-Or, to what ever path PYTHONUSERBASE is set to. PYTHONUSERBASE can be set
-with:
-
-  $ export PYTHONUSERBASE=/myappenv
-
-See: https://pip.pypa.io/en/stable/user_guide/#user-installs
 
 To build a wheel
 ================

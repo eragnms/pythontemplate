@@ -14,7 +14,7 @@
 __version__ = "0.0.1.dev1"
 
 
-def main():
+def main() -> None:
     print("Hello world!")
     print(__version__)
 

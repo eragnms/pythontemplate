@@ -10,6 +10,7 @@ sphinx = "*"
 isort = "*"
 mypy = "*"
 gitlint = "*"
+types-setuptools = "*"
 
 [dev-packages]
 

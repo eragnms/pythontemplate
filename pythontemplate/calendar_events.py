@@ -4,5 +4,5 @@ log = logging.getLogger(__name__)
 
 
 class CalendarEvents:
-    def __init__(self):
+    def __init__(self) -> None:
         pass

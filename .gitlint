@@ -14,8 +14,8 @@ ignore-squash-commits=true
 
 # Configure title-max-length rule, set title length to 80 (72 = default)
 [title-max-length]
-line-length=50
+line-length=72
 
 # You can also reference rules by their id (B1 = body-max-line-length)
 [B1]
-line-length=72
+line-length=88

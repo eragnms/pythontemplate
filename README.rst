@@ -16,7 +16,17 @@ Tools and conventions to use
 
 Usage
 ======
-To use the template and adapt it to a new project:
+
+Setup with installation script
+------------------------------
+To install using the installation script (the target folder should be a git folder):
+
+  - cd pythontemplate
+  - python -m install <project_name> <target_folder>
+
+Setup manually
+--------------
+To use the template and adapt it to a new project manually:
 
   - Rename the pythontemplate folder to your project name.
   - Keep install_requires in setup.py updated with required packages.

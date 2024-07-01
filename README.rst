@@ -14,6 +14,11 @@ Tools and conventions to use
 - Use isort. Isort is triggered by pre-commit, or "isort .".
 - Use gitlint. Setup with: "pre-commit install --hook-type commit-msg". Configured in .gitlint.
 
+NOTE! If you, in Emacs, get the message "FoundError: No module named 'mypy'", then try to update
+mypy:
+
+  $ pipenv install mypy
+
 Usage
 ======
 

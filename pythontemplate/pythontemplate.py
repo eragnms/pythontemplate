@@ -3,20 +3,26 @@
 # import example:
 # from .calendar_events import CalendarEvents
 
-# Version numbering scheme, see
-# https://packaging.python.org/distributing/#choosing-a-versioning-scheme
-# 1.2.0.dev1  # Development release
-# 1.2.0a1     # Alpha Release
-# 1.2.0b1     # Beta Release
-# 1.2.0rc1    # Release Candidate
-# 1.2.0       # Final Release
-# 1.2.0.post1 # Post Release
-__version__ = "0.0.1.dev1"
+import re
+
+
+def get_version_from_setup_py() -> str | None:
+    with open("setup.py", "r") as file:
+        setup_content = file.read()
+    # Search for a pattern like version='1.0.0' or version="1.0.0"
+    version_match = re.search(r"version\s*=\s*['\"]([^'\"]+)['\"]", setup_content)
+    if version_match:
+        return version_match.group(1)
+    return None
 
 
 def main() -> None:
     print("Hello world!")
-    print(__version__)
+    version = get_version_from_setup_py()
+    if version:
+        print(f"Version: {version}")
+    else:
+        print("Version not found in setup.py")
 
 
 if __name__ == "__main__":

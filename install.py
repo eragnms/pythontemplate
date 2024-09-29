@@ -98,7 +98,13 @@ def pre_commit_install_pipenv(directory: str) -> None:
         # Change to the target directory
         os.chdir(directory)
         # Run 'pipenv run pre-commit install --hook-type commit-msg'
-        print("Running 'pipenv run pre-commit install --hook-type commit-msg'")
+        print("Running 'pipenv run pre-commit install'")
+        subprocess.run(
+            ["pipenv", "run", "pre-commit", "install"],
+            check=True,
+            capture_output=True,
+            text=True,
+        )
         subprocess.run(
             ["pipenv", "run", "pre-commit", "install", "--hook-type", "commit-msg"],
             check=True,
@@ -129,8 +135,13 @@ def pre_commit_install_venv(directory: str) -> None:
         # Change to the target directory
         os.chdir(directory)
         # Run 'pre-commit install --hook-type commit-msg'
-        print("Running 'pre-commit install --hook-type commit-msg'")
+        print("Running 'pre-commit install'")
         # Run both activation and pre-commit install in a Fish shell
+        subprocess.run(
+            "source venv/bin/activate.fish && pre-commit install",
+            shell=True,
+            executable="/usr/bin/fish",
+        )
         subprocess.run(
             "source venv/bin/activate.fish && pre-commit install "
             "--hook-type commit-msg",

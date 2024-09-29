@@ -5,7 +5,7 @@ A project to be used as a template for python projects.
 Tools and conventions to use
 ============================
 - Use Python 3 (on a machine running Python 2 as default do install with pip3).
-- Pipenv is used. Install with "sudo pacman -S python-pipenv" and then "pipenv install"
+- Venv is used for virtual environment. Pipenv can optionally be used. Install with "sudo pacman -S python-pipenv" and then "pipenv install"
 - Pytest is used for unit testing.
 - Pre-commit is used. Setup pre-commit with "pre-commit install" in the project's root folder and then "pre-commit autoupdate".
 - Black is used and triggered by pre-commit, or by "$ black ."
@@ -13,6 +13,7 @@ Tools and conventions to use
 - Flake8 is used by using pre-commit, see `pre-commit <https://pre-commit.com/>`_, and by changing max line length to 88 in a .flake8 file in the project root.
 - Use isort. Isort is triggered by pre-commit, or "isort .".
 - Use gitlint. Setup with: "pre-commit install --hook-type commit-msg". Configured in .gitlint.
+- DAP debugging is used with debugpy.
 
 NOTE! If you, in Emacs, get the message "FoundError: No module named 'mypy'", then try to update
 mypy:
@@ -81,6 +82,19 @@ or:
 or:
 
   $ ./pythontemplate-runner.py
+
+Debug
+=====
+Use the DAP debugger. Emacs is set up in the file .dir-locals.el.
+Start the script with:
+
+  $ python -Xfrozen_modules=off -m debugpy --listen 5678 --wait-for-client -m asset_predictor.<module>
+
+In Emacs:
+
+M x dap-breakpoint-add
+M x dap-debug
+M x dap-hydra
 
 Documentation
 =============

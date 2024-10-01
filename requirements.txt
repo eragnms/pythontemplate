@@ -7,3 +7,4 @@ gitlint
 types-setuptools
 pytest
 debugpy
+setuptools

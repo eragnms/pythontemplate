@@ -4,9 +4,10 @@
 # from .calendar_events import CalendarEvents
 
 import re
+from importlib.metadata import version
 
 
-def get_version_from_setup_py() -> str | None:
+def get_version_from_pyproject_toml() -> str | None:
     with open("setup.py", "r") as file:
         setup_content = file.read()
     # Search for a pattern like version='1.0.0' or version="1.0.0"
@@ -16,9 +17,13 @@ def get_version_from_setup_py() -> str | None:
     return None
 
 
+def get_version_from_installed_package() -> str | None:
+    return version("pythontemplate")
+
+
 def main() -> None:
     print("Hello world!")
-    version = get_version_from_setup_py()
+    version = get_version_from_pyproject_toml()
     if version:
         print(f"Version: {version}")
     else:

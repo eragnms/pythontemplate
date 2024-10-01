@@ -1,9 +1,7 @@
-Pythontemplate
-===============
+# Pythontemplate
 A project to be used as a template for python projects.
 
-Tools and conventions to use
-============================
+# Tools and conventions to use
 - Use Python 3 (on a machine running Python 2 as default do install with pip3).
 - Venv is used for virtual environment. Pipenv can optionally be used. Install with "sudo pacman -S python-pipenv" and then "pipenv install"
 - Pytest is used for unit testing.
@@ -18,20 +16,21 @@ Tools and conventions to use
 NOTE! If you, in Emacs, get the message "FoundError: No module named 'mypy'", then try to update
 mypy:
 
-  $ pipenv install mypy
+``` shell
+pipenv install mypy
+```
 
-Usage
-======
+# Usage
 
-Setup with installation script
-------------------------------
+## Setup with installation script
 To install using the installation script (the target folder should be a git folder):
 
-  - cd pythontemplate
-  - python -m install <project_name> <target_folder>
+``` shell
+cd pythontemplate
+python -m install <project_name> <target_folder>
+```
 
-Setup manually
---------------
+## Setup manually
 To use the template and adapt it to a new project manually:
 
   - Rename the pythontemplate folder to your project name.
@@ -44,47 +43,26 @@ To use the template and adapt it to a new project manually:
   - Run "pre-commit install" in the project's root folder and then "pre-commit autoupdate".
   - Run "pre-commit install --hook-type commit-msg".
 
-With pipenv
------------
-Package is to be distributed
-............................
-Here’s a recommended workflow for when you are using a setup.py as a way to distribute your package:
-
-- setup.py
-  - install_requires keyword should include whatever the package “minimally needs to run correctly.”
-  - entry_points should contain entry points to the script to run
-- Pipfile
-  - Represents the concrete requirements for your package
-  - Pull the minimally required dependencies from setup.py by installing your package using Pipenv:
-  - Use pipenv install '-e .'
-  - That will result in a line in your Pipfile that looks something like "e1839a8" = {path = ".", editable = true}.
-
-- Pipfile.lock
-  - Details for a reproducible environment generated from pipenv lock
-    To clarify, put your minimum requirements in setup.py instead of directly with pipenv install. Then use the pipenv install '-e .' command to install your package as editable. This gets all the requirements from setup.py into your environment. Then you can use pipenv lock to get a reproducible environment.
-
-Package is not to be distributed
-................................
-If you are developing an application that isn’t meant to be distributed or installed (a personal website, a desktop application, a game, or similar), you don’t really need a setup.py.
-
-In this situation, you could use Pipfile/Pipfile.lock combo for managing your dependencies.
-
-Run the script
-===============
+# Run the script
 The script can be run from the root folder with either of:
 
-  $ python -m pythontemplate
+``` shell
+python -m pythontemplate
+```
 
 or:
 
-  $ python -m pythontemplate.<module>
+``` shell
+python -m pythontemplate.<module>
+```
 
 or:
 
-  $ ./pythontemplate-runner.py
+``` shell
+./pythontemplate-runner.py
+```
 
-Debug
-=====
+# Debug
 Use the DAP debugger. Emacs is set up in the file .dir-locals.el.
 Start the script with:
 
@@ -96,51 +74,59 @@ M x dap-breakpoint-add
 M x dap-debug
 M x dap-hydra
 
-Documentation
-=============
+# Documentation
 To build the documentation:
 
-  $ cd docs
-  $ make html
+``` shell
+cd docs
+make html
+```
 
-Tests
-=====
+# Tests
 To run tests:
 
-  $ pytest
+``` shell
+pytest
+```
 
-Install the script
-===================
+# Install the script
 Use pipx to run the script in a virtual environment:
 
-   $ sudo pacman -S python-pipx
+``` shell
+sudo pacman -S python-pipx
+```
 
 Then:
 
-   $ cd pythontemplate
-   $ pipx install .
+``` shell
+cd pythontemplate
+pipx install .
+```
 
 To upgrade to a new version:
 
-   $ cd pythontemplate
-   $ pipx upgrade pythontemplate
+``` shell
+cd pythontemplate
+pipx upgrade pythontemplate
+```
 
 When installed the entry points to the scripts, i.e. the way to run
-the scripts, are defined by the entry_points in setup.py. In the
-example the script "script_2.py" would be run with "name-for-script-2".
+the scripts, are defined by the entry_points in pyproject.toml, in its
+section project.scripts.
 
+# To build a wheel
 
-To build a wheel
-================
-$ sudo pip install setuptools wheel
-$ python setup.py bdist_wheel
+``` shell
+python -m build
+```
 
-To install a wheel file
-=======================
-$ sudo pip3 install <filename>.whl
+# To install a wheel file
 
-Docker
-=======
+``` shell
+pipx install <filename>.whl
+```
+
+# Docker
 
 To run the script with docker...
 Look at how this is done in the cosycar project.

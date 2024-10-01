@@ -15,7 +15,7 @@ FILES = [
     "pythontemplate-runner.py",
     "README.rst",
     "requirements.txt",
-    "setup.py",
+    "pyproject.toml",
 ]
 
 FOLDERS = [

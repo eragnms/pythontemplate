@@ -13,7 +13,7 @@ FILES = [
     "mypy.ini",
     ".pre-commit-config.yaml",
     "pythontemplate-runner.py",
-    "README.rst",
+    "README.md",
     "requirements.txt",
     "pyproject.toml",
 ]

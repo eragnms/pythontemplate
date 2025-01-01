@@ -8,7 +8,7 @@ from importlib.metadata import version
 
 
 def get_version_from_pyproject_toml() -> str | None:
-    with open("setup.py", "r") as file:
+    with open("pyproject.toml", "r") as file:
         setup_content = file.read()
     # Search for a pattern like version='1.0.0' or version="1.0.0"
     version_match = re.search(r"version\s*=\s*['\"]([^'\"]+)['\"]", setup_content)
